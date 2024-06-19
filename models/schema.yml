@@ -51,6 +51,126 @@ sources:
               - not_null
           - name : purchSE_PRICE
             description : prix d'achat
+      - name : adwords
+        identifier : raw_gz_adwords
+        description : coûts et résultats de la campagne adwords
+        columns :
+          - name : date_date
+            description : date
+          - name : paid_source
+            description : société chargée de la campagne
+            tests :
+              - not_null
+          - name : campaign_key
+            description: clé de campagne
+          - name : camPGN_name
+            description: nom de campagne/ parfois doublon de clé de campagne
+          - name: ads_cost
+            description: coût de la campagne
+            tests :
+              - not_null
+          - name: impression
+            description: nombre d'impression
+            tests :
+              - not_null
+          - name: click
+            description: nombre de clics
+            tests :
+              - not_null
+          - name : date_date || '-' || campaign_key
+            tests :
+              - unique
+              - not_null
+      - name : bing
+        identifier : raw_gz_bing
+        description : coûts et résultats de la campagne bing
+        columns :
+          - name : date_date
+            description : date
+          - name : paid_source
+            description : société chargée de la campagne
+            tests :
+              - not_null
+          - name : campaign_key
+            description: clé de campagne
+          - name : camPGN_name
+            description: nom de campagne/ parfois doublon de clé de campagne
+          - name: ads_cost
+            description: coût de la campagne
+            tests :
+              - not_null
+          - name: impression
+            description: nombre d'impression
+            tests :
+              - not_null
+          - name: click
+            description: nombre de clics
+            tests :
+              - not_null
+          - name : date_date || '-' || campaign_key
+            tests :
+              - unique
+              - not_null
+      - name : criteo
+        identifier: raw_gz_criteo
+        description: coûts et résultats de la campagne criteo
+        columns :
+          - name : date_date
+            description : date
+          - name : paid_source
+            description : société chargée de la campagne
+            tests :
+              - not_null
+          - name : campaign_key
+            description: clé de campagne
+          - name : camPGN_name
+            description: nom de campagne/ parfois doublon de clé de campagne
+          - name: ads_cost
+            description: coût de la campagne
+            tests :
+              - not_null
+          - name: impression
+            description: nombre d'impression
+            tests :
+              - not_null
+          - name: click
+            description: nombre de clics
+            tests :
+              - not_null
+          - name : date_date || '-' || campaign_key
+            tests :
+              - unique
+              - not_null
+      - name : facebook
+        identifier: raw_gz_facebook
+        description: coûts et résultats de la campagne facebook
+        columns :
+          - name : date_date
+            description : date
+          - name : paid_source
+            description : société chargée de la campagne
+            tests :
+              - not_null
+          - name : campaign_key
+            description: clé de campagne
+          - name : camPGN_name
+            description: nom de campagne/ parfois doublon de clé de campagne
+          - name: ads_cost
+            description: coût de la campagne
+            tests :
+              - not_null
+          - name: impression
+            description: nombre d'impression
+            tests :
+              - not_null
+          - name: click
+            description: nombre de clics
+            tests :
+              - not_null
+          - name : date_date || '-' || campaign_key
+            tests :
+              - unique
+              - not_null
 
 
 models:
@@ -86,3 +206,4 @@ models:
         description: Operational margin = margin + shipping fee - log_cost - ship_cost
   - name: finance_days
     description: finance calculation per days
+ 
