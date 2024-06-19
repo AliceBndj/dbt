@@ -63,7 +63,8 @@ sources:
               - not_null
           - name : campaign_key
             description: clé de campagne
-          - name : camPGN_name
+          - name : camPGN_name as campaign_name,
+              CAST(ads_cost as FLOAT64) as ads_cost,
             description: nom de campagne/ parfois doublon de clé de campagne
           - name: ads_cost
             description: coût de la campagne
@@ -93,7 +94,8 @@ sources:
               - not_null
           - name : campaign_key
             description: clé de campagne
-          - name : camPGN_name
+          - name : camPGN_name as campaign_name,
+              CAST(ads_cost as FLOAT64) as ads_cost,
             description: nom de campagne/ parfois doublon de clé de campagne
           - name: ads_cost
             description: coût de la campagne
@@ -123,7 +125,8 @@ sources:
               - not_null
           - name : campaign_key
             description: clé de campagne
-          - name : camPGN_name
+          - name : camPGN_name as campaign_name,
+              CAST(ads_cost as FLOAT64) as ads_cost,
             description: nom de campagne/ parfois doublon de clé de campagne
           - name: ads_cost
             description: coût de la campagne
@@ -153,7 +156,8 @@ sources:
               - not_null
           - name : campaign_key
             description: clé de campagne
-          - name : camPGN_name
+          - name : camPGN_name as campaign_name,
+              CAST(ads_cost as FLOAT64) as ads_cost,
             description: nom de campagne/ parfois doublon de clé de campagne
           - name: ads_cost
             description: coût de la campagne
